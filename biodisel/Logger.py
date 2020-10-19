@@ -1,6 +1,6 @@
 from network import ServerUDP
 import datetime
-from queue import Queue
+from queue import Queue, Empty
 import threading
 
 
@@ -27,39 +27,32 @@ class Logger(ServerUDP):
 
     def stop_logger(self):
         """."""
-        super().stop()
+        self._input_fila('Logger ended')
         while self.fila.empty() is False:
             pass
-        self.thread_writer.join()
         self.running_logger = False
+        self.thread_writer.join()
+        super().stop()
 
     def _trunk_logger(self):
         """."""
         with open(self.log_file, 'w') as file:
-            file.write('')
+            file.write('%s - %s\n' % (self.timestamp(), 'Logger started.'))
             file.close()
 
     def _input_fila(self, item):
         """."""
         self.fila.put(item)
-        print("inseriu '%s' na fila" % item)
         return 'ok'
 
     def _write_log(self):
         """."""
         while self.running_logger is True:
-            item = self.fila.get()
-            print("pegou '%s' da fila" % item)
+            try:
+                item = self.fila.get(timeout=1)
+            except Empty:
+                continue
+
             with open(self.log_file, 'a') as file:
                 file.write('%s - %s\n' % (self.timestamp(), item))
                 file.close()
-
-
-if __name__ == "__main__":
-    logger = Logger()
-    logger.start_logger()
-
-    while logger.running_logger:
-        pass
-
-    print('Fim logger')

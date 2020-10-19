@@ -34,6 +34,7 @@ class ServerTCP(object):
         self._server_startup = None
         try:
             self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            self.socket.settimeout(1)
         except socket.error as exp:
             print("Socket creation failed.", str(exp))
 
@@ -57,7 +58,11 @@ class ServerTCP(object):
 
         self.socket.listen(self.backlog)
         while self.run:
-            connection, remote = self.socket.accept()
+            try:
+                connection, remote = self.socket.accept()
+            except socket.timeout:
+                continue
+
             _t = threading.Thread(
                 target=self._handle_connection,
                 kwargs={'connection': connection})
@@ -84,10 +89,10 @@ class ServerTCP(object):
 
             if self._num_connections == 0 and\
                     self._list_connection.empty():
-                print('Terminating server.')
-                pid = getpid()
-                proc = Process(pid)
-                proc.terminate()
+                # print('Terminating server.')
+                # pid = getpid()
+                # proc = Process(pid)
+                # proc.terminate()
                 break
 
     def _timeout_server(self):
@@ -228,6 +233,7 @@ class ServerUDP(object):
         self._server_startup = None
         try:
             self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            self.socket.settimeout(1)
         except socket.error as exp:
             print("Socket creation failed.", str(exp))
 
@@ -251,6 +257,9 @@ class ServerUDP(object):
 
         while self.run:
             data, remote = self.receive()
+            if not data and not remote:
+                continue
+
             _t = threading.Thread(target=self._handle_connection,
                                   kwargs={'remote': remote, 'data': data})
             _t.start()
@@ -276,10 +285,10 @@ class ServerUDP(object):
 
             if self._num_connections == 0 and\
                     self._list_connection.empty():
-                print('Terminating server.')
-                pid = getpid()
-                proc = Process(pid)
-                proc.terminate()
+                # print('Terminating server.')
+                # pid = getpid()
+                # proc = Process(pid)
+                # proc.terminate()
                 break
 
     def _timeout_server(self):
@@ -310,7 +319,11 @@ class ServerUDP(object):
 
     def receive(self):
         """Receive data from the client."""
-        request, remote = self.socket.recvfrom(self.size)
+        try:
+            request, remote = self.socket.recvfrom(self.size)
+        except socket.timeout:
+            return (None, None)
+
         return (json.loads(pickle.loads(request)), remote)
 
     def set_function(self, functions):
