@@ -5,7 +5,7 @@ pip install -r requirements.txt
 ```
 Assim que terminar de instalar, basta executar o `Orquestrador.py`
 ```
-python Orquestrador.py
+python orquestrador.py
 ```
 Isso vai iniciar todos os servidores e todas as threads de execução.
 Todo o output da simulação é gravado no arquivo `log.txt`.
