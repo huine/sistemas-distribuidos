@@ -50,10 +50,9 @@ if __name__ == "__main__":
     Decantador.decantador.start()
     TanqueBiodisel.tanque.start()
     
-
+    # 360s(6 minutos) = 3600s(1 hora)
     start = datetime.now()
-    print('start %s' % start)
-    while (datetime.now() - start).total_seconds() < 90:
+    while (datetime.now() - start).total_seconds() < 360:
         pass
 
     reator.stop()

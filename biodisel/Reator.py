@@ -56,10 +56,10 @@ class Reator(object):
                 self.insert_log(
                     string.format(total/4.0, total/2.0, total/4.0))
 
-                sleep(total * (1.0/5.0))
+                sleep(total * 0.02)
 
                 req.post(url="http://localhost:9003/add", data={"qtd": total})
-                self.insert_log("Enviado %sL para o decantador" % total)
+                self.insert_log("Enviado %.3fL para o decantador" % total)
 
     def insert_log(self, item):
         """."""
@@ -73,6 +73,6 @@ class Reator(object):
         while self.running:
             r = req.post(url="http://localhost:9002/etoh").json()
             if not r:
-                sleep(3)
+                sleep(0.3)
             else:
                 self.tanquenaohetoh.inserir_etoh(r)

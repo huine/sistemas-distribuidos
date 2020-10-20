@@ -49,17 +49,17 @@ class TanqueEtOH(object):
             except Empty:
                 continue
 
-            sleep(item * 3)
+            sleep(item * 0.3)
             _r = self.secador(item)
             self.total += _r
             self.insert_log(
-                "Secador processou %sL de EtOH para o tanque" % _r)
+                "Secador processou %.3fL de EtOH para o tanque" % _r)
 
     def enviar_etoh(self):
         """."""
         if self.total > 0:
             ret = jsonify(self.total)
-            s = "Tanque de EtOH enviou %sL para o tanque de NaOH/EtOH"
+            s = "Tanque de EtOH enviou %.3fL para o tanque de NaOH/EtOH"
             self.insert_log(s % self.total)
             self.total = 0
         else:

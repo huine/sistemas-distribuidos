@@ -33,7 +33,7 @@ class Decantador(object):
         """."""
         if self.running:
             self.fila.put(item)
-            self.insert_log("Decantador recebeu %sL" % item)
+            self.insert_log("Decantador recebeu %.3fL" % item)
         return
 
     def processar(self):
@@ -43,21 +43,21 @@ class Decantador(object):
             except Empty:
                 continue
 
-            sleep((to_proc/3.0)*5.0)
+            sleep((to_proc/3.0)*0.5)
 
             self.glicerina += to_proc*0.05
             self.insert_log(
-                "Adicionado %sL de glicerina no tanque." % (to_proc*0.05))
+                "Adicionado %.3fL de glicerina no tanque." % (to_proc*0.05))
 
             req.post(url="http://localhost:9002/add",
                      data={"qtd": to_proc*0.13})
             self.insert_log(
-                "Enviado %sL de EtOH para o secador." % (to_proc*0.13))
+                "Enviado %.3fL de EtOH para o secador." % (to_proc*0.13))
 
             req.post(url="http://localhost:9004/add",
                      data={"qtd": to_proc*0.82})
             self.insert_log(
-                "Enviado %sL de solução para lavagem." % (to_proc*0.82))
+                "Enviado %.3fL de solução para lavagem." % (to_proc*0.82))
 
     def insert_log(self, item):
         """."""

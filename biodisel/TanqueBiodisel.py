@@ -53,11 +53,11 @@ class TanqueBiodisel(object):
             # eh equivalente a perder 14,2625%
             item = item - (item*0.142625)
 
-            sleep(item * 3)
+            sleep(item * 0.3)
             _r = self.secador(item)
             self.total += _r
             self.insert_log(
-                "Secador processou %sL de BioDisel para o tanque" % _r)
+                "Secador processou %.3fL de BioDisel para o tanque" % _r)
 
 
 tanque_biodisel_app = Flask(__name__)

@@ -30,13 +30,13 @@ class TanqueOleo(object):
         while self.running:
             add = round(uniform(1, 2), 3)
             self.total += add
-            self.insert_log('Adicionado %sL de óleo no tanque de óleo.' % add)
-            sleep(5)
+            self.insert_log('Adicionado %.3fL de óleo no tanque de óleo.' % add)
+            sleep(0.5)
 
     def remover(self, qtd):
         """Remove qtd do total de oleo"""
         self.total -= qtd
-        self.insert_log('Removido %sL de óleo do tanque de óleo.' % qtd)
+        self.insert_log('Removido %.3fL de óleo do tanque de óleo.' % qtd)
 
     def insert_log(self, item):
         """Envia o texto para o log"""
