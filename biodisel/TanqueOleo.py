@@ -28,7 +28,7 @@ class TanqueOleo(object):
     def _add_oleo(self):
         """."""
         while self.running:
-            add = uniform(1, 2)
+            add = round(uniform(1, 2), 3)
             self.total += add
             self.insert_log('Adicionado %sL de óleo no tanque de óleo.' % add)
             sleep(5)
