@@ -1,112 +1,193 @@
-2020-10-19 02:27:16.305377 - Logger started.
-2020-10-19 02:27:16.467397 - Iniciando Reator.
-2020-10-19 02:27:16.856379 - Iniciando tanque de óleo
-2020-10-19 02:27:16.971332 - Adicionado 1.8164605435046337L de óleo no tanque de óleo.
-2020-10-19 02:27:17.201769 - Iniciando tanque de NaOH/EtOH
-2020-10-19 02:27:17.359135 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:17.666531 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:17.806411 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:18.146267 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:18.286265 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:18.496720 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:18.786611 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:19.082001 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:19.366344 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:19.561425 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:19.936768 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:20.126296 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:20.476364 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:20.611634 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:20.747358 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:21.046333 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:21.471637 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:21.701545 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:21.886360 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.046571 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.161527 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.386185 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.496590 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.551433 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.686425 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.856741 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:22.976711 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:23.176625 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:23.561678 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:23.846298 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:24.046866 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:24.166045 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:24.446455 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:24.586544 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:24.726404 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:25.046212 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:25.306765 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:25.731323 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:25.971630 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.341973 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.402107 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.407251 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.412592 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.417137 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.423365 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.428997 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.433634 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.437815 - Adicionado 1.6637963682562094L de óleo no tanque de óleo.
-2020-10-19 02:27:26.443624 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.448358 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.452247 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.455996 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.460462 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.464317 - Removido 1.25L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.469147 - Removido 2.5L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.473373 - Removido 1.25L de óleo do tanque de óleo.
-2020-10-19 02:27:26.477329 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.481331 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.484974 - Reator processou 1.25L de óleo, 2.5L de EtOH, 1.25L de NaOH.
-2020-10-19 02:27:26.490942 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.495049 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.500067 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.504995 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.509799 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.513675 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.517738 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.522383 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.528411 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.532564 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.536321 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.540673 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.544433 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.549749 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.553730 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.558250 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.563225 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.568851 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.573941 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.579735 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.583768 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.588550 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.593190 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.597305 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.602020 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.606368 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.610783 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.614739 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.619694 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.623709 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.628770 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.632909 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.636903 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.641416 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.645303 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.650230 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.654025 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.659147 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.663401 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.667762 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.672287 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.677058 - Parando Reator.
-2020-10-19 02:27:26.682174 - Parando tanque de óleo
-2020-10-19 02:27:26.686557 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.691488 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.695387 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
-2020-10-19 02:27:26.700741 - Parando tanque de NaOH/EtOH
-2020-10-19 02:27:26.907480 - Logger ended
+2020-10-19 22:52:28.400689 - Logger started.
+2020-10-19 22:52:28.419035 - Iniciando tanque de EtOH
+2020-10-19 22:52:28.436743 - Iniciando Reator.
+2020-10-19 22:52:28.449481 - Iniciando tanque de óleo
+2020-10-19 22:52:28.470596 - Adicionado 1.4805513248088096L de óleo no tanque de óleo.
+2020-10-19 22:52:28.532075 - Iniciando tanque de NaOH/EtOH
+2020-10-19 22:52:28.631663 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:28.717125 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:28.869906 - Iniciando o decantador
+2020-10-19 22:52:29.016719 - Iniciando tanque de BioDisel
+2020-10-19 22:52:30.076876 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:30.206186 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:31.656660 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:31.917171 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:32.912285 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:33.161868 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:33.998212 - Adicionado 1.996753802048679L de óleo no tanque de óleo.
+2020-10-19 22:52:34.492603 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:34.632384 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:35.986995 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:36.137333 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:37.553111 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:37.891671 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:39.026283 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:39.241175 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:39.446728 - Adicionado 1.9883859913474122L de óleo no tanque de óleo.
+2020-10-19 22:52:40.460950 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:40.657182 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:41.918259 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:42.275657 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:43.223337 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:43.840138 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:44.658336 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:45.058403 - Adicionado 1.8182168816024402L de óleo no tanque de óleo.
+2020-10-19 22:52:45.327802 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:46.012625 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:46.829408 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:47.815812 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:48.331798 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:49.378300 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:49.934510 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:50.219943 - Adicionado 1.3411934148225924L de óleo no tanque de óleo.
+2020-10-19 22:52:50.531362 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:51.245930 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:51.774015 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:52.775414 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:53.245121 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:53.931179 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:54.632697 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:55.434248 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:55.727920 - Adicionado 1.7227325310592145L de óleo no tanque de óleo.
+2020-10-19 22:52:56.166089 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:57.088152 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:57.602097 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:58.404018 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:52:58.990097 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:52:59.669440 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:00.618271 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:01.352242 - Adicionado 1.3754168321332632L de óleo no tanque de óleo.
+2020-10-19 22:53:01.591140 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:02.231483 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:02.918577 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:03.609438 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:03.764897 - Removido 1.25L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:03.962164 - Removido 2.5L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:04.219127 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:04.343852 - Removido 1.25L de óleo do tanque de óleo.
+2020-10-19 22:53:04.463416 - Reator processou 1.25L de óleo, 2.5L de EtOH, 1.25L de NaOH.
+2020-10-19 22:53:04.826210 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:05.381730 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:05.828283 - Decantador recebeu 5.0L
+2020-10-19 22:53:06.182029 - Enviado 5L para o decantador
+2020-10-19 22:53:06.299964 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:06.883969 - Adicionado 1.1043218805850215L de óleo no tanque de óleo.
+2020-10-19 22:53:07.068251 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:07.746099 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:08.270940 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:09.169346 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:09.748433 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:10.579307 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:11.443566 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:11.815733 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:12.298859 - Adicionado 1.39901169259717L de óleo no tanque de óleo.
+2020-10-19 22:53:12.846156 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:13.617797 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:14.135134 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:14.265618 - Adicionado 0.25L de glicerina no tanque.
+2020-10-19 22:53:14.889008 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:15.036113 - Enviado 0.65L de EtOH para o secador.
+2020-10-19 22:53:15.671614 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:16.006840 - Enviado 4.1L de solução para lavagem.
+2020-10-19 22:53:16.338577 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:17.028842 - Secador processou 0.64025L de EtOH para o tanque
+2020-10-19 22:53:17.409423 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:17.545108 - Tanque de EtOH enviou 0.64025L para o tanque de NaOH/EtOH
+2020-10-19 22:53:17.927044 - Adicionado 1.81631315559653L de óleo no tanque de óleo.
+2020-10-19 22:53:18.195023 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:18.457953 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:19.429035 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:19.945876 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:20.777521 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:21.533342 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:22.202815 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:22.718713 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:23.204204 - Adicionado 1.4518515122885867L de óleo no tanque de óleo.
+2020-10-19 22:53:23.497445 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:24.831729 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:24.955296 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:26.141337 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:26.272915 - Secador processou 3.4625089374999996L de BioDisel para o tanque
+2020-10-19 22:53:26.495152 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:27.913348 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:28.229310 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:28.565859 - Adicionado 1.1445446886741588L de óleo no tanque de óleo.
+2020-10-19 22:53:29.031164 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:29.594302 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:30.517956 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:30.982560 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:31.135522 - Removido 1.25L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:31.366536 - Removido 2.5L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:31.520758 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:31.669672 - Removido 1.25L de óleo do tanque de óleo.
+2020-10-19 22:53:31.936008 - Reator processou 1.25L de óleo, 2.5L de EtOH, 1.25L de NaOH.
+2020-10-19 22:53:32.322188 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:32.854510 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:33.370280 - Decantador recebeu 5.0L
+2020-10-19 22:53:33.565988 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:33.770993 - Enviado 5L para o decantador
+2020-10-19 22:53:33.940010 - Adicionado 1.55856168892148L de óleo no tanque de óleo.
+2020-10-19 22:53:34.186086 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:35.242843 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:35.828567 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:36.661047 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:37.377090 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:38.131648 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:38.797559 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:39.335724 - Adicionado 1.4567433025282872L de óleo no tanque de óleo.
+2020-10-19 22:53:39.514901 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:40.415910 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:40.915401 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:41.813927 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:42.319059 - Adicionado 0.25L de glicerina no tanque.
+2020-10-19 22:53:42.483740 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:43.359937 - Enviado 0.65L de EtOH para o secador.
+2020-10-19 22:53:43.436402 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:44.108428 - Enviado 4.1L de solução para lavagem.
+2020-10-19 22:53:44.307086 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:44.771860 - Adicionado 1.8431884458752616L de óleo no tanque de óleo.
+2020-10-19 22:53:44.961618 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:45.262173 - Secador processou 0.64025L de EtOH para o tanque
+2020-10-19 22:53:45.787854 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:46.304003 - Tanque de EtOH enviou 0.64025L para o tanque de NaOH/EtOH
+2020-10-19 22:53:46.448876 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:47.128092 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:47.698380 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:48.535135 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:49.054356 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:50.117504 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:50.435673 - Adicionado 1.6691484149522968L de óleo no tanque de óleo.
+2020-10-19 22:53:50.603941 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:51.658479 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:52.093525 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:53.163318 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:53.542928 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:54.865197 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:55.096522 - Secador processou 3.4625089374999996L de BioDisel para o tanque
+2020-10-19 22:53:55.243916 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:56.013565 - Adicionado 1.133928619420295L de óleo no tanque de óleo.
+2020-10-19 22:53:56.515607 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:56.931645 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:57.870618 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:58.618898 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:59.017215 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:59.023830 - Removido 1.25L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:53:59.033977 - Parando Reator.
+2020-10-19 22:53:59.039221 - Removido 2.5L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:53:59.045513 - Parando tanque de óleo
+2020-10-19 22:53:59.052671 - Removido 1.25L de óleo do tanque de óleo.
+2020-10-19 22:53:59.060069 - Reator processou 1.25L de óleo, 2.5L de EtOH, 1.25L de NaOH.
+2020-10-19 22:53:59.626988 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:54:00.025716 - Adicionado 0.1L de EtOH no tanque de NaOH/EtOH
+2020-10-19 22:54:00.071380 - Decantador recebeu 5.0L
+2020-10-19 22:54:00.080040 - Enviado 5L para o decantador
+2020-10-19 22:54:00.648495 - Adicionado 0.3L de NaOH no tanque de NaOH/EtOH
+2020-10-19 22:54:00.832505 - Parando tanque de NaOH/EtOH
+2020-10-19 22:54:00.841362 - Parando tanque de EtOH
+2020-10-19 22:54:00.848887 - Parando o decantador
+2020-10-19 22:54:00.856505 - Parando tanque de BioDisel
+2020-10-19 22:54:00.864079 - Total Biodisel: 6.925L
+2020-10-19 22:54:00.871263 - Total Glicerina: 0.500L
+2020-10-19 22:54:00.879065 - Total EtOH restante: 0.181L
+2020-10-19 22:54:00.886635 - Total NaOH restante: 15.450L
+2020-10-19 22:54:00.894812 - Total Óleo restante: 22.551L

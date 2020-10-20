@@ -1,8 +1,7 @@
 from random import uniform
 from time import sleep
 from threading import Thread
-from network import ClientUDP
-
+import requests as req
 
 class TanqueOleo(object):
     """."""
@@ -11,9 +10,8 @@ class TanqueOleo(object):
         """."""
         self.total = 0
         self.running = False
-        self.client_udp = ClientUDP()
         self.thread_oleo = Thread(
-            target=self._add_oleo, name="Tanque-Oleo-Adder")
+            target=self._add_oleo, daemon=True)
 
     def start(self):
         """."""
@@ -42,4 +40,7 @@ class TanqueOleo(object):
 
     def insert_log(self, item):
         """."""
-        self.client_udp.send(item, port=9000)
+        req.post(
+            url="http://localhost:9000/write",
+            data={"texto": item}
+        )

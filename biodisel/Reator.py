@@ -1,8 +1,8 @@
 from TanqueOleo import TanqueOleo
 from TanqueNaohEtoh import TanqueNaohEtoh
-from network import ServerTCP, ClientUDP, ClientTCP
 from threading import Thread
 from time import sleep
+import requests as req
 
 
 class Reator(object):
@@ -10,24 +10,14 @@ class Reator(object):
 
     def __init__(self):
         """."""
-        self.server_tcp = ServerTCP(port=9002)
-        self.client_udp = ClientUDP()
-        self.client_tcp = ClientTCP()
         self.tanque_oleo = TanqueOleo()
         self.tanquenaohetoh = TanqueNaohEtoh()
         self.total_processado = 0
         self.running = False
-        self.thread_servidor = Thread(
-            target=self.start_servidor, name="Thread-servidor-reator",
-            daemon=True)
-
         self.thread_processar = Thread(
-            target=self.processar, name="Thread-processo-reator",
-            daemon=True)
-
-    def start_servidor(self):
-        """."""
-        self.server_tcp.start()
+            target=self.processar, daemon=True)
+        self.thread_tanque = Thread(
+            target=self.buscar_tanque, daemon=True)
 
     def start(self):
         """."""
@@ -35,8 +25,8 @@ class Reator(object):
         self.running = True
         self.tanque_oleo.start()
         self.tanquenaohetoh.start()
-        self.thread_servidor.start()
         self.thread_processar.start()
+        self.thread_tanque.start()
 
     def stop(self):
         """."""
@@ -44,9 +34,6 @@ class Reator(object):
         self.running = False
         self.tanque_oleo.stop()
         self.tanquenaohetoh.stop()
-        self.server_tcp.stop()
-        self.thread_servidor.join()
-        self.thread_processar.join()
 
     def processar(self):
         """."""
@@ -55,9 +42,7 @@ class Reator(object):
                 self.tanquenaohetoh.total_etoh +\
                 self.tanque_oleo.total
 
-            if total < 5:
-                continue
-            else:
+            if total > 5:
                 total = 5
 
             if self.tanquenaohetoh.total_naoh >= total/4.0 and\
@@ -71,8 +56,23 @@ class Reator(object):
                 self.insert_log(
                     string.format(total/4.0, total/2.0, total/4.0))
 
-                sleep(1)
+                sleep(total * (1.0/5.0))
+
+                req.post(url="http://localhost:9003/add", data={"qtd": total})
+                self.insert_log("Enviado %sL para o decantador" % total)
 
     def insert_log(self, item):
         """."""
-        self.client_udp.send(item, port=9000)
+        req.post(
+            url="http://localhost:9000/write",
+            data={"texto": item}
+        )
+
+    def buscar_tanque(self):
+        """."""
+        while self.running:
+            r = req.post(url="http://localhost:9002/etoh").json()
+            if not r:
+                sleep(3)
+            else:
+                self.tanquenaohetoh.inserir_etoh(r)

@@ -1,53 +1,46 @@
-from network import ServerUDP
-import datetime
+from flask import Flask, request
 from queue import Queue, Empty
-import threading
+from datetime import datetime
+from threading import Thread
 
 
-class Logger(ServerUDP):
+class Logger(object):
     """."""
 
-    def __init__(self, log_file='log.txt'):
-        """."""
-        self.log_file = log_file
-        self.timestamp = lambda: str(datetime.datetime.now())
+    def __init__(self):
+        self.log_file = 'log.txt'
+        self.timestamp = lambda: str(datetime.now())
         self.fila = Queue()
-        self.running_logger = False
-        super().__init__(port=9000)
-        self.thread_writer = threading.Thread(
-            target=self._write_log, name="Logger-Writer")
+        self.running = False
+        self.thread_writer = Thread(
+            target=self.write_log, daemon=True)
 
-    def start_logger(self):
+    def start(self):
         """."""
-        self._trunk_logger()
-        self.running_logger = True
+        self.running = True
+        self.trunk_logger()
         self.thread_writer.start()
-        super().set_function((self._input_fila,))
-        super().start()
 
-    def stop_logger(self):
+    def stop(self):
         """."""
-        self._input_fila('Logger ended')
-        while self.fila.empty() is False:
+        self.fila_input('Logger ended')
+        while not self.fila.empty():
             pass
-        self.running_logger = False
-        self.thread_writer.join()
-        super().stop()
+        self.running = False
 
-    def _trunk_logger(self):
+    def trunk_logger(self):
         """."""
         with open(self.log_file, 'w') as file:
             file.write('%s - %s\n' % (self.timestamp(), 'Logger started.'))
             file.close()
 
-    def _input_fila(self, item):
+    def fila_input(self, item):
         """."""
-        self.fila.put(item)
-        return 'ok'
+        self.fila.put(item=item)
 
-    def _write_log(self):
+    def write_log(self):
         """."""
-        while self.running_logger is True:
+        while self.running:
             try:
                 item = self.fila.get(timeout=1)
             except Empty:
@@ -56,3 +49,17 @@ class Logger(ServerUDP):
             with open(self.log_file, 'a') as file:
                 file.write('%s - %s\n' % (self.timestamp(), item))
                 file.close()
+
+
+print(__name__)
+logger_app = Flask(__name__)
+logger = Logger()
+
+
+@logger_app.route('/write', methods=['POST'])
+def write():
+    """."""
+    item = request.form.get('texto', '')
+    if item:
+        logger.fila_input(item=item)
+    return ''

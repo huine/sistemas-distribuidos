@@ -1,6 +1,6 @@
-from time import sleep
 from threading import Thread
-from network import ClientUDP
+from time import sleep
+import requests as req
 
 
 class TanqueNaohEtoh(object):
@@ -11,13 +11,10 @@ class TanqueNaohEtoh(object):
         self.total_naoh = 0
         self.total_etoh = 0
         self.running = False
-        self.client_udp = ClientUDP()
         self.thread_naoh = Thread(
-            target=self._add_naoh, name="Tanque-naoh-adder",
-            daemon=True)
+            target=self._add_naoh, daemon=True)
         self.thread_etoh = Thread(
-            target=self._add_etoh, name="Tanque-etoh-adder",
-            daemon=True)
+            target=self._add_etoh, daemon=True)
 
     def start(self):
         """."""
@@ -30,22 +27,20 @@ class TanqueNaohEtoh(object):
         """."""
         self.insert_log('Parando tanque de NaOH/EtOH')
         self.running = False
-        self.thread_naoh.join()
-        self.thread_etoh.join()
 
     def _add_naoh(self):
         """."""
         while self.running:
             self.total_naoh += 0.3
             self.insert_log('Adicionado 0.3L de NaOH no tanque de NaOH/EtOH')
-            sleep(0.1)
+            sleep(1)
 
     def _add_etoh(self):
         """."""
         while self.running:
             self.total_etoh += 0.1
             self.insert_log('Adicionado 0.1L de EtOH no tanque de NaOH/EtOH')
-            sleep(0.1)
+            sleep(1)
 
     def remover_naoh(self, qtd):
         """."""
@@ -57,6 +52,13 @@ class TanqueNaohEtoh(object):
         self.total_etoh -= qtd
         self.insert_log('Removido %sL de EtOH no tanque de NaOH/EtOH' % qtd)
 
+    def inserir_etoh(self, qtd):
+        """."""
+        self.total_etoh += qtd
+
     def insert_log(self, item):
         """."""
-        self.client_udp.send(item, port=9000)
+        req.post(
+            url="http://localhost:9000/write",
+            data={"texto": item}
+        )
