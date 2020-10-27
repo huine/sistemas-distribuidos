@@ -26,8 +26,8 @@ class Barbeiro(Thread):
             cliente = self.fila.get()
             self.tempo_dormindo += default_timer() - start
             print('Atendendo o cliente: %s' % cliente.nome)
-            # Trabalha entre 2 e 3 segundos (stand in para 20~30 minutos)
-            sleep(random.uniform(2, 3))
+            # Trabalha entre 12 e 18 segundos (stand in para 20~30 minutos)
+            sleep(random.uniform(12, 18))
             # Encerra a thread do cliente que foi atendido
             cliente.join()
             global clientes_atendidos
@@ -46,7 +46,7 @@ class Cliente(Thread):
         """."""
         print("%s indo ao barbeiro" % self.nome)
         try:
-            self.barbeiro.fila.put(self, timeout=2.5)
+            self.barbeiro.fila.put(self, timeout=0.02)
         except Full:
             global clientes_recusados
             clientes_recusados += 1
@@ -55,15 +55,20 @@ class Cliente(Thread):
 if __name__ == "__main__":
     clientes_atendidos = 0
     clientes_recusados = 0
+    count = 0
     barbeiro = Barbeiro(nome="Barbeiro", cadeiras=5)
     barbeiro.running = True
     barbeiro.start()
-    for i in range(10):
-        cliente = Cliente(nome=str(i), barbeiro=barbeiro)
+
+    start = default_timer()
+    # Um dia de 8 horas, com a conversão 1h -> 36s, 8h -> 288s
+    while (default_timer() - start) < 288:
+        count += 1
+        cliente = Cliente(nome=str(count), barbeiro=barbeiro)
         cliente.start()
-        # Gera um cliente a cada 3 segundo(Stand in para 30 minutos)
+        # Gera um cliente a cada 18 segundo(Stand in para 30 minutos)
         # [2 clientes por hora]
-        sleep(3)
+        sleep(18)
 
     while not barbeiro.fila.empty():
         # Espera a fila de clientes esvaziar antes de encerrar o programa
