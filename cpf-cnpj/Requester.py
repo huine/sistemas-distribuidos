@@ -2,6 +2,7 @@ import requests as req
 from queue import Queue, Empty
 from multiprocessing import cpu_count
 from threading import Thread
+from os import makedirs
 
 
 class Worker(object):
@@ -19,6 +20,9 @@ class Worker(object):
 
     def start(self):
         """Inicia a execução do worker."""
+        # Criar pasta para o output
+        makedirs('output', exist_ok=True)
+
         print('Iniciando worker %s' % self.name)
         self.running = True
 
