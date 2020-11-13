@@ -17,6 +17,21 @@ class Worker(object):
         self.running = False
         self.fila = fila
         self.retorno = []
+        self.max = self.fila.qsize()
+        self.ult_print = 0
+
+    def diff(self):
+        """."""
+        if self.ult_print + (self.max * 0.02) <= len(self.retorno):
+            self.ult_print = len(self.retorno)
+        else:
+            return
+
+        print(
+            'Worker %s -> Fila: %s\tProc: %s' % (self.name,
+                                                 self.fila.qsize(),
+                                                 len(self.retorno))
+        )
 
     def start(self):
         """Inicia a execução do worker."""
@@ -36,6 +51,7 @@ class Worker(object):
             i.start()
 
         while self.fila.qsize() > 0:
+            self.diff()
             pass
 
         self.running = False

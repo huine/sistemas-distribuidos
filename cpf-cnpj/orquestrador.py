@@ -25,7 +25,7 @@ def open_file(num_chunks=cpu_count()):
     """
     with open('BASE.txt', 'r') as f:
         file = [i.replace(' ', '').replace('\n', '')
-                for i in f.readlines()]
+                for i in f.readlines()[:10000]]
         f.close()
 
     return chunk(file, (len(file)//num_chunks + 1))
@@ -59,7 +59,7 @@ def unify_output():
 
 if __name__ == '__main__':
     # Número de processos de servidor e de workers
-    num_serv_work = 8
+    num_serv_work = 4
     # Número de threads para cada worker
     num_work_thread = 1
 
@@ -68,8 +68,9 @@ if __name__ == '__main__':
     dados = open_file(num_chunks=num_serv_work)
 
     # Processos dos servidores de calculos
-    print('Iniciando os servidores')
-    serv = make_servers(num_server=num_serv_work)
+    # print('Iniciando os servidores')
+    # serv = make_servers(num_server=num_serv_work)
+    portas = list(range(9000, 9000 + num_serv_work))
 
     # Cria os workers para enviar os itens do arquivo para os servidores.
     # Um worker para cada servidor.
@@ -83,7 +84,7 @@ if __name__ == '__main__':
 
         workers.append(
             make_worker(
-                url='http://localhost:%s/proc' % serv['portas'][index],
+                url='http://192.168.0.18:%s/proc' % portas[index],
                 fila=q, name=index, q_thread=num_work_thread)
         )
 
@@ -93,6 +94,7 @@ if __name__ == '__main__':
     for r in workers:
         workers_proc.append(Process(target=r.start))
 
+    start = default_timer()
     # Inicia todos os processos dos workers
     print('Iniciando todos os workers')
     for proc in workers_proc:
@@ -102,14 +104,17 @@ if __name__ == '__main__':
     print('Esperando os processos dos workers')
     for proc in workers_proc:
         proc.join()
+    executacao = default_timer() - start
 
     # Encerra todas os processos dos servidores
-    print('Finalizando servidores')
-    for proc in serv['servidores']:
-        proc.terminate()
+    # print('Finalizando servidores')
+    # for proc in serv['servidores']:
+    #     proc.terminate()
 
     # Gerar arquivo único com o output
     print("Unificando o output.")
     unify_output()
+
+    print('Tempo de execução: %.5f s' % executacao)
 
     print('Encerrado')

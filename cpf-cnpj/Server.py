@@ -119,4 +119,7 @@ def make_servers(num_server=cpu_count(), port_base=9000):
 
 
 if __name__ == '__main__':
-    make_servers()
+    serv = make_servers(4, 9000)
+    print('portas: %s' % str(serv['portas']))
+    while True:
+        pass
