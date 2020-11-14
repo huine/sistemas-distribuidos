@@ -1,20 +1,11 @@
-from multiprocessing import Process, cpu_count
-from queue import Queue
-from itertools import islice
+from queue import Queue, Empty
+from multiprocessing import cpu_count, Value
+from threading import Thread
 from timeit import default_timer
-from time import sleep
-from Requester import make_worker
-from Server import make_servers
-from os import remove, listdir
+import funcoes
 
 
-def chunk(it, size):
-    """Particiona uma lista em pedaços do mesmo tamanho."""
-    it = iter(it)
-    return iter(lambda: tuple(islice(it, size)), ())
-
-
-def open_file(num_chunks=cpu_count()):
+def open_file(num_linhas=0):
     """
     Abre o arquivo e particiona.
 
@@ -23,98 +14,134 @@ def open_file(num_chunks=cpu_count()):
     Se o parametro não for informado, é tratado como o número de threads
     da cpu.
     """
+    print('Carregando o arquivo')
     with open('BASE.txt', 'r') as f:
         file = [i.replace(' ', '').replace('\n', '')
-                for i in f.readlines()[:10000]]
+                for i in f.readlines()]
         f.close()
 
-    return chunk(file, (len(file)//num_chunks + 1))
+    if num_linhas:
+        file = file[:num_linhas]
+
+    print("Total de entradas: %s" % len(file))
+
+    return file
 
 
-def unify_output():
-    """Unifica todos os arquivos da pastas output."""
-    try:
-        # Remove o arquivo log.txt caso já exista.
-        remove('final.txt')
-    except:
-        pass
+class Worker(object):
+    """Docstring for Worker."""
 
-    # Itera sobre os arquivos da pasta output
-    for file in listdir('output'):
-        # Abre o arquivo de output final
-        with open('final.txt', 'a') as final:
-            # Abre um arquivo de output do worker e le todas as linhas
-            with open('output/' + file, 'r') as tmp:
-                lines = tmp.readlines()
-                tmp.close()
-            # Escreve o conteudo lido no arquivo final
-            final.writelines(lines)
-            final.close()
-        try:
-            # remove arquivo que já foi lido.
-            remove('output/' + file)
-        except:
+    def __init__(self, fila, total, num_threads=cpu_count()):
+        """."""
+        self.fila = fila
+        self.total = total
+        self.num_threads = num_threads
+        self.ult_print = Value('i', 0)
+        self.threads = []
+        self.output = []
+        self.running = False
+
+    def diff(self):
+        """."""
+        offset = (self.total * 0.01)
+        # offset = 100
+        if self.ult_print.value + offset <= len(self.output):
+            with self.ult_print.get_lock():
+                self.ult_print.value = len(self.output)
+
+            print('Faltam:\t%s' % (self.total - len(self.output)))
+
+    def start(self):
+        """."""
+        self.running = True
+
+        print('Criando as threads do worker')
+        for i in range(self.num_threads):
+            self.threads.append(Thread(target=self.processar))
+
+        print('Iniciando as threads do worker')
+        for t in self.threads:
+            t.start()
+
+        while self.fila.empty() is False:
+            # self.diff()
             pass
+
+        self.running = False
+
+        print('Encerrando as threads do worker')
+        for t in self.threads:
+            t.join()
+
+    def processar(self):
+        """."""
+        while self.running:
+            try:
+                item = self.fila.get(timeout=0.5)
+            except Empty:
+                continue
+
+            item = [int(i) for i in item]
+
+            if len(item) == 9:
+                resp = funcoes.calcular_cpf(item)
+            else:
+                resp = funcoes.calcular_cnpj(item)
+
+            self.output.append(resp)
+
+
+def iniciar(num_threads, file):
+    """."""
+    fila = Queue()
+    print('Gerando fila')
+    for item in file:
+        fila.put(item)
+
+    worker = Worker(
+        fila=fila, total=fila.qsize(),
+        num_threads=num_threads)
+
+    start = default_timer()
+    worker.start()
+    execucao = default_timer() - start
+
+    print('Tempo de execução: %.5f s' % execucao)
+    with open('output.txt', 'w') as f:
+        f.writelines(worker.output)
+        f.close()
+
+    print('Terminou')
+
+    return execucao
+
+
+def trunk_media():
+    with open('media.txt', 'w') as f:
+        f.write('')
+        f.close()
 
 
 if __name__ == '__main__':
-    # Número de processos de servidor e de workers
-    num_serv_work = 4
-    # Número de threads para cada worker
-    num_work_thread = 1
+    file = open_file()
+    times = []
+    for i in range(100):
+        tmp = iniciar(num_threads=8, file=file)
+        times.append(tmp)
 
-    # Pega os dados do arquivo
-    print('Carregando o arquivo')
-    dados = open_file(num_chunks=num_serv_work)
+    media = sum(times)/len(times)
+    print("Tempo Médio: %.10f ms\n" % (media*1000))
+    # trunk_media()
+    # file = open_file(num_linhas=50000)
+    # for num in [2**i for i in range(1,7)]:
+    #     times = []
+    #     for i in range(100):
+    #         tmp = iniciar(num_threads=num, file=file)
+    #         times.append(tmp)
 
-    # Processos dos servidores de calculos
-    # print('Iniciando os servidores')
-    # serv = make_servers(num_server=num_serv_work)
-    portas = list(range(9000, 9000 + num_serv_work))
+    #     media = sum(times)/len(times)
+    #     s = "Threads: %s\tTempo: %.5f\n" % (num, media)
+    #     with open('media.txt', 'a') as m:
+    #         m.write(s)
 
-    # Cria os workers para enviar os itens do arquivo para os servidores.
-    # Um worker para cada servidor.
-    print('Iniciando os workers')
-    workers = []
-    for index, item in enumerate(dados):
-        q = Queue()
-        # Move os itens da lista para uma fila
-        for j in item:
-            q.put_nowait(j)
-
-        workers.append(
-            make_worker(
-                url='http://192.168.0.18:%s/proc' % portas[index],
-                fila=q, name=index, q_thread=num_work_thread)
-        )
-
-    # Coloca cada worker em um processo independente
-    workers_proc = []
-    print('Criando os processos dos workers')
-    for r in workers:
-        workers_proc.append(Process(target=r.start))
-
-    start = default_timer()
-    # Inicia todos os processos dos workers
-    print('Iniciando todos os workers')
-    for proc in workers_proc:
-        proc.start()
-
-    # Aguarda os processos dos workers terminarem
-    print('Esperando os processos dos workers')
-    for proc in workers_proc:
-        proc.join()
-    executacao = default_timer() - start
-
-    # Encerra todas os processos dos servidores
-    # print('Finalizando servidores')
-    # for proc in serv['servidores']:
-    #     proc.terminate()
-
-    # Gerar arquivo único com o output
-    print("Unificando o output.")
-    unify_output()
-
-    print('Tempo de execução: %.5f s' % executacao)
-
-    print('Encerrado')
+    # print('Fim')

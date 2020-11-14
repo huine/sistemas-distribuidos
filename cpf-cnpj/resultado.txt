@@ -1,0 +1,3 @@
+0.0381867538 ms por operação
+382.09895 s para validar o arquivo
+10006060 itens validados

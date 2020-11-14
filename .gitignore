@@ -140,3 +140,4 @@ dmypy.json
 cython_debug/
 cpf-cnpj/BASE.txt
 cpf-cnpj/~$latorio.docx
+cpf-cnpj/output.txt
