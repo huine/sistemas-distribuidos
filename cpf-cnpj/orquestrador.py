@@ -41,15 +41,15 @@ class Worker(object):
         self.output = []
         self.running = False
 
-    def diff(self):
-        """."""
-        offset = (self.total * 0.01)
-        # offset = 100
-        if self.ult_print.value + offset <= len(self.output):
-            with self.ult_print.get_lock():
-                self.ult_print.value = len(self.output)
+    # def diff(self):
+    #     """."""
+    #     offset = (self.total * 0.01)
+    #     # offset = 100
+    #     if self.ult_print.value + offset <= len(self.output):
+    #         with self.ult_print.get_lock():
+    #             self.ult_print.value = len(self.output)
 
-            print('Faltam:\t%s' % (self.total - len(self.output)))
+    #         print('Faltam:\t%s' % (self.total - len(self.output)))
 
     def start(self):
         """."""
@@ -106,7 +106,6 @@ def iniciar(num_threads, file):
     worker.start()
     execucao = default_timer() - start
 
-    print('Tempo de execução: %.5f s' % execucao)
     with open('output.txt', 'w') as f:
         f.writelines(worker.output)
         f.close()
@@ -122,26 +121,21 @@ def trunk_media():
         f.close()
 
 
-if __name__ == '__main__':
-    file = open_file()
+def iniciar_media(file, mili=False):
     times = []
     for i in range(100):
         tmp = iniciar(num_threads=8, file=file)
         times.append(tmp)
 
-    media = sum(times)/len(times)
-    print("Tempo Médio: %.10f ms\n" % (media*1000))
-    # trunk_media()
-    # file = open_file(num_linhas=50000)
-    # for num in [2**i for i in range(1,7)]:
-    #     times = []
-    #     for i in range(100):
-    #         tmp = iniciar(num_threads=num, file=file)
-    #         times.append(tmp)
+    if not mili:
+        return "%.10f s" % (sum(times)/len(times))
+    else:
+        return "%.10f ms" % (sum(times)/len(times)) * 1000
 
-    #     media = sum(times)/len(times)
-    #     s = "Threads: %s\tTempo: %.5f\n" % (num, media)
-    #     with open('media.txt', 'a') as m:
-    #         m.write(s)
 
-    # print('Fim')
+if __name__ == '__main__':
+    file = open_file()
+    # tempo = iniciar_media(file=file)
+    tempo = '%.10f s' % iniciar(num_threads=8, file=file)
+
+    print("Tempo: %s\n" % tempo)
