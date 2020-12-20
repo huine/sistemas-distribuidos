@@ -41,15 +41,14 @@ class Worker(object):
         self.output = []
         self.running = False
 
-    # def diff(self):
-    #     """."""
-    #     offset = (self.total * 0.01)
-    #     # offset = 100
-    #     if self.ult_print.value + offset <= len(self.output):
-    #         with self.ult_print.get_lock():
-    #             self.ult_print.value = len(self.output)
+    def diff(self):
+        """."""
+        offset = (self.total * 0.01)
+        if self.ult_print.value + offset <= len(self.output):
+            with self.ult_print.get_lock():
+                self.ult_print.value = len(self.output)
 
-    #         print('Faltam:\t%s' % (self.total - len(self.output)))
+            print('Faltam:\t%s' % (self.total - len(self.output)))
 
     def start(self):
         """."""
@@ -64,7 +63,7 @@ class Worker(object):
             t.start()
 
         while self.fila.empty() is False:
-            # self.diff()
+            self.diff()
             pass
 
         self.running = False
@@ -124,7 +123,7 @@ def trunk_media():
 def iniciar_media(file, mili=False):
     times = []
     for i in range(100):
-        tmp = iniciar(num_threads=8, file=file)
+        tmp = iniciar(num_threads=cpu_count(), file=file)
         times.append(tmp)
 
     if not mili:
@@ -136,6 +135,6 @@ def iniciar_media(file, mili=False):
 if __name__ == '__main__':
     file = open_file()
     # tempo = iniciar_media(file=file)
-    tempo = '%.10f s' % iniciar(num_threads=8, file=file)
+    tempo = '%.10f s' % iniciar(num_threads=cpu_count(), file=file)
 
     print("Tempo: %s\n" % tempo)
